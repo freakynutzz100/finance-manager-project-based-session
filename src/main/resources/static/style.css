@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    margin-bottom: 5px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #000000;
+    margin-bottom: 20px;
+}
+
+.card {
+    border: 1px solid #000000;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+
+.summary-card {
+    border: 1px solid #000000;
+    padding: 15px;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.net-result {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: inline-block;
+    width: 120px;
+    font-weight: bold;
+}
+
+.form-group input, .form-group select {
+    width: 250px;
+    padding: 5px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+
+.form-actions button {
+    padding: 6px 12px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.form-actions button:hover {
+    background-color: #f0f0f0;
+}
+
+.columns-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.column {
+    flex: 1;
+    min-width: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #000000;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f0f0f0;
+}
+
+button.action-btn {
+    padding: 4px 8px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+button.action-btn:hover {
+    background-color: #f0f0f0;
+}

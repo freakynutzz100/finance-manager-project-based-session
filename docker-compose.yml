@@ -1,0 +1,36 @@
+name: finance-manager
+
+services:
+  finance-manager-app:
+    build: .
+    container_name: finance-manager-app
+    ports:
+      - "8084:8084"
+    depends_on:
+      finance-manager-db:
+        condition: service_healthy
+    environment:
+      - DB_HOST=finance-manager-db
+      - DB_PORT=3306
+      - DB_NAME=finance_db
+      - DB_USER=root
+      - DB_PASSWORD=Asus@260422
+
+  finance-manager-db:
+    image: mysql:8.0
+    container_name: finance-manager-db
+    environment:
+      MYSQL_ROOT_PASSWORD: Asus@260422
+      MYSQL_DATABASE: finance_db
+    ports:
+      - "3307:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pAsus@260422"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:

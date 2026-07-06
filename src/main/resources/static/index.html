@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Finance Manager</h1>
+        <hr>
+
+        <!-- Form for Add/Edit -->
+        <div class="card">
+            <h2 id="form-title">Add New Entry</h2>
+            <hr>
+            <form id="entry-form">
+                <input type="hidden" id="entry-id">
+                
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <input type="text" id="description" required placeholder="e.g., Salary, Groceries">
+                </div>
+
+                <div class="form-group">
+                    <label for="amount">Amount:</label>
+                    <input type="number" id="amount" step="0.01" min="0" required placeholder="0.00">
+                </div>
+
+                <div class="form-group">
+                    <label for="type">Type:</label>
+                    <select id="type" required>
+                        <option value="INCOME">Income</option>
+                        <option value="EXPENSE">Expense</option>
+                    </select>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" id="save-btn">Save Entry</button>
+                    <button type="button" id="cancel-btn" style="display: none;">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Net Profit/Loss Summary -->
+        <div class="summary-card">
+            <h2>Summary</h2>
+            <hr>
+            <div>Total Income: <span id="total-income">0.00</span></div>
+            <div>Total Expense: <span id="total-expense">0.00</span></div>
+            <div class="net-result">
+                <span id="net-label">Net Profit</span>: <span id="net-value">0.00</span>
+            </div>
+        </div>
+
+        <!-- Tables Layout (Income and Expense columns) -->
+        <div class="columns-container">
+            <!-- Left Column: Income -->
+            <div class="column">
+                <h2>Income</h2>
+                <hr>
+                <table id="income-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Description</th>
+                            <th>Amount</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="income-list">
+                        <!-- Entries will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Right Column: Expense -->
+            <div class="column">
+                <h2>Expense</h2>
+                <hr>
+                <table id="expense-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Description</th>
+                            <th>Amount</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="expense-list">
+                        <!-- Entries will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
